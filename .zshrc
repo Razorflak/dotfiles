@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+source <(fzf --zsh)
 export PATH="$PATH:/opt/nvim-linux64/bin:/home/razorflak/.local/bin"
 export PATH="/home/linuxbrew/.linuxbrew/opt/node@20/bin:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

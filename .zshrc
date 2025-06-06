@@ -108,14 +108,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+PEC_CONFIG_DIR="$HOME/pec"
+if [ -d "$PEC_CONFIG_DIR" ]; then
+    for file in "$PEC_CONFIG_DIR"/*; do
+        if [ -f "$file" ] && [ -r "$file" ]; then
+            source "$file"
+        fi
+    done
+fi
+
+#
 alias vim="nvim"
-source <(fzf --zsh)
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/nvim-linux-x86_64/bin:/home/linuxbrew/.linuxbrew/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin:/home/razorflak/.local/bin"
 export PATH="/home/linuxbrew/.linuxbrew/opt/node@20/bin:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/node@20/lib"
   export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/node@20/include"
 eval "$(zoxide init zsh)"
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

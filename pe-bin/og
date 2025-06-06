@@ -1,0 +1,34 @@
+#!/bin/zsh
+
+# Directory containing markdown files
+VAULT_DIR="/Users/julien_tanguy2/Google Drive/Mon Drive/Obsidian-vault/work"
+SOURCE_DIR="tomove"
+DEST_DIR="notes"
+
+
+# Iterate through all markdown files in the source directory
+find "$VAULT_DIR/$SOURCE_DIR" -type f -name "*.md" | while read -r file; do
+  echo "Processing $file"
+
+  # Extract the hub from the file. This assumes the tag is on the line immediately following "tag:"
+hub=$(awk -F': *' '/^hub:/ { gsub(/[\[\]]/, "", $2); gsub(/^[ \t"]+|[ \t"]+$/, "", $2); print $2; exit }' "$file")
+
+
+  echo "Found hub $hub"
+
+  # If a tag is found, proceed with moving the file
+  if [ ! -z "$hub" ]; then
+    # Create the target directory if it doesn't exist
+    TARGET_DIR="$VAULT_DIR/$DEST_DIR/$hub"
+    mkdir -p "$TARGET_DIR"
+
+    # Move the file to the target directory
+    mv "$file" "$TARGET_DIR/"
+    echo "Moved $file to $TARGET_DIR"
+  else
+    echo "No tag found for $file"
+  fi
+
+done
+
+echo "Done 🪷"

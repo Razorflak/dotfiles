@@ -2,3 +2,5 @@
 !.config/nvim
 !.config/lazygit
 !.config/lazydocker
+pec/specific/*.zsh
+!pec/specific/*.zsh.sample

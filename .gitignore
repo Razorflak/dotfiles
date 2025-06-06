@@ -1,1 +1,4 @@
-.config/ngrok/
+.config/*
+!.config/nvim
+!.config/lazygit
+!.config/lazydocker

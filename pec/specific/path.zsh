@@ -1,0 +1,6 @@
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/nvim-linux-x86_64/bin:/home/linuxbrew/.linuxbrew/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin:/home/razorflak/.local/bin"
+export PATH="/home/linuxbrew/.linuxbrew/opt/node@20/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/opt/node@20/bin:$PATH"
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/home/razorflak/.local/bin"

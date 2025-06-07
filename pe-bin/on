@@ -7,6 +7,6 @@ fi
 
 file_name=$(echo "$1" | tr ' ' '-')
 formatted_file_name=$(date "+%Y-%m-%d")_${file_name}.md
-cd "/Users/julien_tanguy2/Google Drive/Mon Drive/Obsidian-vault/work" || exit
+cd "$JTA_OBSIDIAN_REPO/work" || exit
 touch "inbox/${formatted_file_name}"
 nvim "inbox/${formatted_file_name}"

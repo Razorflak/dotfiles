@@ -1,3 +1,7 @@
+if [ -f "$HOME/pec/specific/pre_init.sh" ]; then
+  source "$HOME/pec/specific/pre_init.sh"
+fi
+
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -49,3 +53,11 @@ eval "$(zoxide init zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 autoload -U +X bashcompinit && bashcompinit
+
+# pnpm
+export PNPM_HOME="/Users/julien_tanguy2/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

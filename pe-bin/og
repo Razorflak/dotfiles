@@ -26,7 +26,7 @@ hub=$(awk -F': *' '/^hub:/ { gsub(/[\[\]]/, "", $2); gsub(/^[ \t"]+|[ \t"]+$/, "
     mv "$file" "$TARGET_DIR/"
     echo "Moved $file to $TARGET_DIR"
   else
-    echo "No tag found for $file"
+    echo "No hub found for $file"
   fi
 
 done

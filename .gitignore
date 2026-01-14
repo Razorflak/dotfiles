@@ -3,4 +3,5 @@
 !.config/lazygit
 !.config/lazydocker
 pec/specific/*.zsh
+pec/specific/*.sh
 !pec/specific/*.zsh.sample

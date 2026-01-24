@@ -5,3 +5,6 @@
 pec/specific/*.zsh
 pec/specific/*.sh
 !pec/specific/*.zsh.sample
+
+pe-bin/specific/*
+!pe-bin/specific/*.zsh.sample

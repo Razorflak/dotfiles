@@ -137,7 +137,7 @@ Par défaut, les worktrees fusionnés sont pré-sélectionnés. (A peu près, ca
     console.log(`${worktree} supprimé.`);
 
     try {
-      execSync(`git branch -d "${branch}"`, { stdio: "ignore" });
+      execSync(`git branch -D "${branch}"`, { stdio: "ignore" });
       console.log(`Branche locale ${branch} supprimée.`);
     } catch (error) {
       console.log(

@@ -11,9 +11,10 @@ import { isWorktreeRepo } from "./utils/check-is-worktree-repo.js";
 isWorktreeRepo();
 inquirer.registerPrompt("autocomplete", autocomplete);
 
-const baseBranch = getDefaultBranch();
-const newBranchOption = "__New_Branch__";
 const cliBranchName = process.argv[2];
+const cliSourceBranch = process.argv[3];
+const baseBranch = cliSourceBranch ?? getDefaultBranch();
+const newBranchOption = "__New_Branch__";
 
 function fetchBranches() {
   console.log("Fetching all branches...");
